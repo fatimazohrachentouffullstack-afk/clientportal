@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>ClientPortal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ClientPortal</h1>
+  <table id="clients">
+    <thead><tr><th>Nom</th><th>Email</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <h2>Ajouter un client</h2>
+  <form id="clientForm" action="add_client.php" method="POST">
+    <input type="text" name="nom" id="nom" placeholder="Nom">
+    <input type="text" name="email" id="email" placeholder="Email">
+    <button type="submit">Ajouter</button>
+    <p id="error"></p>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
