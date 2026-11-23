@@ -1,30 +1,21 @@
 pipeline {
-
     agent any
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/fatimazohrachentouffullstack-afk/clientportal.git'
-            }
-        }
-
         stage('Code Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    bat 'sonar-scanner -Dsonar.projectKey=DevWebClients -Dsonar.sources=.'
+                    bat 'sonar-scanner'
                 }
             }
         }
 
         stage('Quality Gate') {
             steps {
-                timeout(time: 1, unit: 'MINUTES') {
+                timeout(time: 5, unit: 'MINUTES') {
                     waitForQualityGate abortPipeline: true
                 }
             }
         }
-
     }
 }
