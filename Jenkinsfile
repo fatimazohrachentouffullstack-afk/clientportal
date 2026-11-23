@@ -6,7 +6,7 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 withSonarQubeEnv('SonarQubeServer') {
-                    bat '"C:\\Users\\dell\\Downloads\\sonar-scanner-cli-8.1.0.6389-windows-x64\\bin\\sonar-scanner.bat"'
+                   bat '"C:\\Users\\dell\\Downloads\\sonar-scanner-cli-8.1.0.6389-windows-x64\\sonar-scanner-8.1.0.6389-windows-x64\\bin\\sonar-scanner.bat"'
                 }
             }
         }
